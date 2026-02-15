@@ -1,4 +1,4 @@
-.PHONY: dev dev-web dev-api install install-web install-api lint test
+.PHONY: dev dev-web dev-api install install-web install-api lint test typecheck
 
 # Development
 dev:
@@ -23,6 +23,9 @@ install-api:
 lint:
 	cd web && npx @biomejs/biome check .
 	cd api && uv run ruff check . && uv run ruff format --check .
+
+typecheck:
+	cd web && npx tsc --noEmit
 
 test:
 	cd web && npx vitest run
