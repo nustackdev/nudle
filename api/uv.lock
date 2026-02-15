@@ -35,12 +35,30 @@ wheels = [
 ]
 
 [[package]]
+name = "attrs"
+version = "25.4.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz", hash = "sha256:16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11", size = 934251, upload-time = "2025-10-06T13:54:44.725Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/3a/2a/7cc015f5b9f5db42b7d48157e23356022889fc354a2813c15934b7cb5c0e/attrs-25.4.0-py3-none-any.whl", hash = "sha256:adcf7e2a1fb3b36ac48d97835bb6d8ade15b8dcce26aba8bf1d14847b57a3373", size = 67615, upload-time = "2025-10-06T13:54:43.17Z" },
+]
+
+[[package]]
 name = "backports-asyncio-runner"
 version = "1.2.0"
 source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/8e/ff/70dca7d7cb1cbc0edb2c6cc0c38b65cba36cccc491eca64cabd5fe7f8670/backports_asyncio_runner-1.2.0.tar.gz", hash = "sha256:a5aa7b2b7d8f8bfcaa2b57313f70792df84e32a2a746f585213373f900b42162", size = 69893, upload-time = "2025-07-02T02:27:15.685Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/a0/59/76ab57e3fe74484f48a53f8e337171b4a2349e506eabe136d7e01d059086/backports_asyncio_runner-1.2.0-py3-none-any.whl", hash = "sha256:0da0a936a8aeb554eccb426dc55af3ba63bcdc69fa1a600b5bb305413a4477b5", size = 12313, upload-time = "2025-07-02T02:27:14.263Z" },
+]
+
+[[package]]
+name = "certifi"
+version = "2026.1.4"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/e0/2d/a891ca51311197f6ad14a7ef42e2399f36cf2f9bd44752b3dc4eab60fdc5/certifi-2026.1.4.tar.gz", hash = "sha256:ac726dd470482006e014ad384921ed6438c457018f4b3d204aea4281258b2120", size = 154268, upload-time = "2026-01-04T02:42:41.825Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e6/ad/3cc14f097111b4de0040c83a525973216457bbeeb63739ef1ed275c1c021/certifi-2026.1.4-py3-none-any.whl", hash = "sha256:9943707519e4add1115f44c2bc244f782c0249876bf51b6599fee1ffbedd685c", size = 152900, upload-time = "2026-01-04T02:42:40.15Z" },
 ]
 
 [[package]]
@@ -83,10 +101,282 @@ wheels = [
 ]
 
 [[package]]
+name = "eb-datetime"
+version = "0.1.0"
+source = { editable = "../../everybase/pkgs/eb-datetime" }
+dependencies = [
+    { name = "everybase" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "everybase", editable = "../../everybase/src/everybase" }]
+
+[[package]]
+name = "eb-dict"
+version = "0.1.0"
+source = { editable = "../../everybase/pkgs/eb-dict" }
+dependencies = [
+    { name = "eb-shape" },
+    { name = "everybase" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "eb-shape", editable = "../../everybase/substrates/eb-shape" },
+    { name = "everybase", editable = "../../everybase/src/everybase" },
+]
+
+[[package]]
+name = "eb-fin"
+version = "0.1.0"
+source = { editable = "../../everybase/pkgs/eb-fin" }
+dependencies = [
+    { name = "everybase" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "everybase", editable = "../../everybase/src/everybase" }]
+
+[[package]]
+name = "eb-flow"
+version = "0.1.0"
+source = { editable = "../../everybase/pkgs/eb-flow" }
+dependencies = [
+    { name = "everybase" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "everybase", editable = "../../everybase/src/everybase" }]
+
+[[package]]
+name = "eb-flow-ext"
+version = "0.1.0"
+source = { editable = "../../everybase/pkgs/eb-flow-ext" }
+dependencies = [
+    { name = "eb-flow" },
+    { name = "everybase" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "eb-flow", editable = "../../everybase/pkgs/eb-flow" },
+    { name = "everybase", editable = "../../everybase/src/everybase" },
+]
+
+[[package]]
+name = "eb-gql"
+version = "0.1.0"
+source = { editable = "../../everybase/substrates/eb-gql" }
+dependencies = [
+    { name = "everybase" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "everybase", editable = "../../everybase/src/everybase" }]
+
+[[package]]
+name = "eb-math"
+version = "0.1.0"
+source = { editable = "../../everybase/pkgs/eb-math" }
+dependencies = [
+    { name = "everybase" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "everybase", editable = "../../everybase/src/everybase" }]
+
+[[package]]
+name = "eb-notion"
+version = "0.1.0"
+source = { editable = "../../everybase/pkgs/eb-notion" }
+dependencies = [
+    { name = "attrs" },
+    { name = "everybase" },
+    { name = "httpx" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "attrs", specifier = ">=23.0.0" },
+    { name = "everybase", editable = "../../everybase/src/everybase" },
+    { name = "httpx", specifier = ">=0.24.0" },
+]
+
+[[package]]
+name = "eb-path"
+version = "0.1.0"
+source = { editable = "../../everybase/pkgs/eb-path" }
+dependencies = [
+    { name = "everybase" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "everybase", editable = "../../everybase/src/everybase" }]
+
+[[package]]
+name = "eb-pv"
+version = "0.1.0"
+source = { editable = "../../everybase/pkgs/eb-pv" }
+dependencies = [
+    { name = "eb-shape" },
+    { name = "everybase" },
+    { name = "pv" },
+    { name = "tkv" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "eb-shape", editable = "../../everybase/substrates/eb-shape" },
+    { name = "everybase", editable = "../../everybase/src/everybase" },
+    { name = "msgpack", marker = "extra == 'msgpack'" },
+    { name = "pv", git = "https://github.com/everyabc/pv" },
+    { name = "rdbpython", marker = "extra == 'rocksdb'" },
+    { name = "redis", marker = "extra == 'redis'" },
+    { name = "tkv", git = "https://github.com/everyabc/tkv" },
+]
+provides-extras = ["rocksdb", "redis", "msgpack"]
+
+[[package]]
+name = "eb-rest"
+version = "0.1.0"
+source = { editable = "../../everybase/substrates/eb-rest" }
+dependencies = [
+    { name = "everybase" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "everybase", editable = "../../everybase/src/everybase" }]
+
+[[package]]
+name = "eb-service"
+version = "0.1.0"
+source = { editable = "../../everybase/substrates/eb-service" }
+dependencies = [
+    { name = "everybase" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "everybase", editable = "../../everybase/src/everybase" }]
+
+[[package]]
+name = "eb-shape"
+version = "0.1.0"
+source = { editable = "../../everybase/substrates/eb-shape" }
+dependencies = [
+    { name = "everybase" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "everybase", editable = "../../everybase/src/everybase" }]
+
+[[package]]
+name = "eb-stream"
+version = "0.1.0"
+source = { editable = "../../everybase/substrates/eb-stream" }
+dependencies = [
+    { name = "everybase" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "everybase", editable = "../../everybase/src/everybase" }]
+
+[[package]]
+name = "eb-table"
+version = "0.1.0"
+source = { editable = "../../everybase/substrates/eb-table" }
+dependencies = [
+    { name = "everybase" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "everybase", editable = "../../everybase/src/everybase" }]
+
+[[package]]
+name = "eb-uuid"
+version = "0.1.0"
+source = { editable = "../../everybase/pkgs/eb-uuid" }
+dependencies = [
+    { name = "everybase" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "everybase", editable = "../../everybase/src/everybase" }]
+
+[[package]]
+name = "everybase"
+version = "0.1.0"
+source = { editable = "../../everybase/src/everybase" }
+dependencies = [
+    { name = "attrs" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "attrs", specifier = ">=23.0.0" }]
+
+[[package]]
+name = "everybase-workspace"
+version = "0.0.0"
+source = { editable = "../../everybase" }
+dependencies = [
+    { name = "eb-datetime" },
+    { name = "eb-dict" },
+    { name = "eb-fin" },
+    { name = "eb-flow" },
+    { name = "eb-flow-ext" },
+    { name = "eb-gql" },
+    { name = "eb-math" },
+    { name = "eb-notion" },
+    { name = "eb-path" },
+    { name = "eb-pv" },
+    { name = "eb-rest" },
+    { name = "eb-service" },
+    { name = "eb-shape" },
+    { name = "eb-stream" },
+    { name = "eb-table" },
+    { name = "eb-uuid" },
+    { name = "everybase" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "eb-datetime", editable = "../../everybase/pkgs/eb-datetime" },
+    { name = "eb-dict", editable = "../../everybase/pkgs/eb-dict" },
+    { name = "eb-fin", editable = "../../everybase/pkgs/eb-fin" },
+    { name = "eb-flow", editable = "../../everybase/pkgs/eb-flow" },
+    { name = "eb-flow-ext", editable = "../../everybase/pkgs/eb-flow-ext" },
+    { name = "eb-gql", editable = "../../everybase/substrates/eb-gql" },
+    { name = "eb-math", editable = "../../everybase/pkgs/eb-math" },
+    { name = "eb-notion", editable = "../../everybase/pkgs/eb-notion" },
+    { name = "eb-path", editable = "../../everybase/pkgs/eb-path" },
+    { name = "eb-pv", editable = "../../everybase/pkgs/eb-pv" },
+    { name = "eb-rest", editable = "../../everybase/substrates/eb-rest" },
+    { name = "eb-service", editable = "../../everybase/substrates/eb-service" },
+    { name = "eb-shape", editable = "../../everybase/substrates/eb-shape" },
+    { name = "eb-stream", editable = "../../everybase/substrates/eb-stream" },
+    { name = "eb-table", editable = "../../everybase/substrates/eb-table" },
+    { name = "eb-uuid", editable = "../../everybase/pkgs/eb-uuid" },
+    { name = "everybase", editable = "../../everybase/src/everybase" },
+]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "hypothesis", specifier = ">=6.0.0" },
+    { name = "pre-commit", specifier = ">=3.0.0" },
+    { name = "pytest", specifier = ">=7.0.0" },
+    { name = "pytest-asyncio", specifier = ">=1.3.0" },
+    { name = "pytest-benchmark", specifier = ">=4.0.0" },
+    { name = "pytest-cov", specifier = ">=4.0.0" },
+    { name = "pytest-timeout", specifier = ">=2.1.0" },
+    { name = "pytest-xdist", specifier = ">=3.0.0" },
+    { name = "ruff", specifier = ">=0.8.0" },
+]
+
+[[package]]
 name = "everylens"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "everybase-workspace" },
     { name = "fastapi" },
     { name = "uvicorn", extra = ["standard"] },
 ]
@@ -101,6 +391,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "everybase-workspace", editable = "../../everybase" },
     { name = "fastapi", specifier = ">=0.115.0" },
     { name = "uvicorn", extras = ["standard"], specifier = ">=0.30.0" },
 ]
@@ -160,6 +451,19 @@ wheels = [
 ]
 
 [[package]]
+name = "httpcore"
+version = "1.0.9"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "certifi" },
+    { name = "h11" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/06/94/82699a10bca87a5556c9c59b5963f2d039dbd239f25bc2a63907a05a14cb/httpcore-1.0.9.tar.gz", hash = "sha256:6e34463af53fd2ab5d807f399a9b45ea31c3dfa2276f15a2c3f00afff6e176e8", size = 85484, upload-time = "2025-04-24T22:06:22.219Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/7e/f5/f66802a942d491edb555dd61e3a9961140fd64c90bce1eafd741609d334d/httpcore-1.0.9-py3-none-any.whl", hash = "sha256:2d400746a40668fc9dec9810239072b40b4484b640a8c38fd654a024c7a1bf55", size = 78784, upload-time = "2025-04-24T22:06:20.566Z" },
+]
+
+[[package]]
 name = "httptools"
 version = "0.7.1"
 source = { registry = "https://pypi.org/simple" }
@@ -200,6 +504,21 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/4d/31/14df99e1c43bd132eec921c2e7e11cda7852f65619bc0fc5bdc2d0cb126c/httptools-0.7.1-cp314-cp314-musllinux_1_2_aarch64.whl", hash = "sha256:f084813239e1eb403ddacd06a30de3d3e09a9b76e7894dcda2b22f8a726e9c60", size = 452631, upload-time = "2025-10-10T03:54:58.219Z" },
     { url = "https://files.pythonhosted.org/packages/22/d2/b7e131f7be8d854d48cb6d048113c30f9a46dca0c9a8b08fcb3fcd588cdc/httptools-0.7.1-cp314-cp314-musllinux_1_2_x86_64.whl", hash = "sha256:7347714368fb2b335e9063bc2b96f2f87a9ceffcd9758ac295f8bbcd3ffbc0ca", size = 452910, upload-time = "2025-10-10T03:54:59.366Z" },
     { url = "https://files.pythonhosted.org/packages/53/cf/878f3b91e4e6e011eff6d1fa9ca39f7eb17d19c9d7971b04873734112f30/httptools-0.7.1-cp314-cp314-win_amd64.whl", hash = "sha256:cfabda2a5bb85aa2a904ce06d974a3f30fb36cc63d7feaddec05d2050acede96", size = 88205, upload-time = "2025-10-10T03:55:00.389Z" },
+]
+
+[[package]]
+name = "httpx"
+version = "0.28.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "anyio" },
+    { name = "certifi" },
+    { name = "httpcore" },
+    { name = "idna" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/b1/df/48c586a5fe32a0f01324ee087459e112ebb7224f646c0b5023f5e79e9956/httpx-0.28.1.tar.gz", hash = "sha256:75e98c5f16b0f35b567856f597f06ff2270a374470a5c2392242528e3e3e42fc", size = 141406, upload-time = "2024-12-06T15:37:23.222Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/2a/39/e50c7c3a983047577ee07d2a9e53faf5a69493943ec3f6a384bdc792deb2/httpx-0.28.1-py3-none-any.whl", hash = "sha256:d909fcccc110f8c7faf814ca82a9a4d816bc5a6dbfea25d6591d6985b8ba59ad", size = 73517, upload-time = "2024-12-06T15:37:21.509Z" },
 ]
 
 [[package]]
@@ -279,6 +598,15 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/40/f1/6d86a29246dfd2e9b6237f0b5823717f60cad94d47ddc26afa916d21f525/pre_commit-4.5.1.tar.gz", hash = "sha256:eb545fcff725875197837263e977ea257a402056661f09dae08e4b149b030a61", size = 198232, upload-time = "2025-12-16T21:14:33.552Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/5d/19/fd3ef348460c80af7bb4669ea7926651d1f95c23ff2df18b9d24bab4f3fa/pre_commit-4.5.1-py2.py3-none-any.whl", hash = "sha256:3b3afd891e97337708c1674210f8eba659b52a38ea5f822ff142d10786221f77", size = 226437, upload-time = "2025-12-16T21:14:32.409Z" },
+]
+
+[[package]]
+name = "pv"
+version = "0.1.0"
+source = { git = "https://github.com/everyabc/pv#ce90a91a4e9041d3a3216f14b016d71e0f6f6ba9" }
+dependencies = [
+    { name = "attrs" },
+    { name = "tkv" },
 ]
 
 [[package]]
@@ -565,6 +893,11 @@ sdist = { url = "https://files.pythonhosted.org/packages/c4/68/79977123bb7be889a
 wheels = [
     { url = "https://files.pythonhosted.org/packages/81/0d/13d1d239a25cbfb19e740db83143e95c772a1fe10202dda4b76792b114dd/starlette-0.52.1-py3-none-any.whl", hash = "sha256:0029d43eb3d273bc4f83a08720b4912ea4b071087a3b48db01b7c839f7954d74", size = 74272, upload-time = "2026-01-18T13:34:09.188Z" },
 ]
+
+[[package]]
+name = "tkv"
+version = "0.1.0"
+source = { git = "https://github.com/everyabc/tkv#c3a11e7be01721d0d001695478502556daf9e8ce" }
 
 [[package]]
 name = "tomli"

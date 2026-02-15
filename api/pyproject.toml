@@ -12,29 +12,11 @@ requires-python = ">=3.10"
 dependencies = [
     "fastapi>=0.115.0",
     "uvicorn[standard]>=0.30.0",
+    "everybase-workspace",
 ]
 
-# everybase deps — enable when integrating with everybase.
-# Requires resolving editable-vs-path conflict in everybase workspace.
-# [project.optional-dependencies]
-# everybase = [
-#     "everybase",
-#     "eb-pv",
-#     "eb-shape",
-#     "eb-flow",
-#     "eb-service",
-#     "pv",
-#     "tkv",
-# ]
-#
-# [tool.uv.sources]
-# everybase = { path = "../../everybase/src/everybase" }
-# eb-pv = { path = "../../everybase/pkgs/eb-pv" }
-# eb-shape = { path = "../../everybase/substrates/eb-shape" }
-# eb-flow = { path = "../../everybase/pkgs/eb-flow" }
-# eb-service = { path = "../../everybase/substrates/eb-service" }
-# pv = { path = "../../pv" }
-# tkv = { path = "../../tkv" }
+[tool.uv.sources]
+everybase-workspace = { path = "../../everybase", editable = true }
 
 [dependency-groups]
 dev = [
