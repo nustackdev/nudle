@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "UI backend for Nu"
 license = "MIT"
 authors = [{ name = "Gor Arakelyan", email = "gorarkln@gmail.com" }]
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 dependencies = [
     "fastapi>=0.115.0",
     "uvicorn[standard]>=0.30.0",
@@ -76,6 +76,12 @@ select = [
 ignore = [
     "E501",   # Line too long (handled by formatter)
     "D105",   # Missing docstring in magic method
+    "D107",   # Missing docstring in __init__
+    "D102",   # Missing docstring in public method (terse refs / cmds)
+    "D103",   # Missing docstring in public function
+    "D417",   # Missing arg descriptions in docstring
+    "ANN401", # Allow typing.Any where it is the honest type
+    "S110",   # try/except/pass when we intentionally swallow shutdown noise
 ]
 
 [tool.ruff.lint.pydocstyle]
