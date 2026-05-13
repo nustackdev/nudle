@@ -11,7 +11,7 @@
 .ruff_cache
 
 # Example/runtime data
-.dbtest/
+.db*/
 
 # Agents
 CLAUDE.md
