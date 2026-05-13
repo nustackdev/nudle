@@ -1,14 +1,16 @@
-.PHONY: dev dev-web dev-api install install-web install-api lint test typecheck
+.PHONY: build dev dev-web install install-web install-api lint test typecheck example
 
-# Development
+# Build the browser bundle into web/dist (consumed by nudle.serve as static_dir).
+build:
+	cd web && npm run build
+
+# Run the counter end-to-end example. Needs `make build` first.
+example:
+	cd api && uv run python ../examples/counter.py
+
+# Web dev server with HMR. ws is proxied to the running nudle.serve on :8080.
 dev:
-	$(MAKE) dev-web & $(MAKE) dev-api & wait
-
-dev-web:
 	cd web && npm run dev
-
-dev-api:
-	cd api && uv run uvicorn nudle.server:app --reload --port 8000
 
 # Install
 install: install-web install-api

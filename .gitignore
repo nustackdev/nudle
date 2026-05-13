@@ -10,6 +10,9 @@
 # Caches
 .ruff_cache
 
+# Example/runtime data
+.dbtest/
+
 # Agents
 CLAUDE.md
 .agent/

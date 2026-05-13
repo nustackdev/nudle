@@ -203,6 +203,25 @@ requires-dist = [
 provides-extras = ["default", "infra", "distributed", "all"]
 
 [[package]]
+name = "nu-virtuals"
+version = "0.1.0"
+source = { editable = "../../nu/ext/nu-virtuals" }
+dependencies = [
+    { name = "nu" },
+    { name = "virtuals-py" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "nu", editable = "../../nu/src" },
+    { name = "nu-virtuals", extras = ["rocksdb", "redis"], marker = "extra == 'infra'", editable = "../../nu/ext/nu-virtuals" },
+    { name = "redis", marker = "extra == 'redis'" },
+    { name = "virtuals-py", editable = "../../virtuals" },
+    { name = "virtuals-py", extras = ["rocksdb"], marker = "extra == 'rocksdb'", editable = "../../virtuals" },
+]
+provides-extras = ["rocksdb", "redis", "infra"]
+
+[[package]]
 name = "nudle"
 version = "0.1.0"
 source = { editable = "." }
@@ -214,9 +233,11 @@ dependencies = [
 
 [package.dev-dependencies]
 dev = [
+    { name = "nu-virtuals" },
     { name = "pre-commit" },
     { name = "pytest" },
     { name = "pytest-asyncio" },
+    { name = "rdbpython" },
     { name = "ruff" },
 ]
 
@@ -229,9 +250,11 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 dev = [
+    { name = "nu-virtuals", editable = "../../nu/ext/nu-virtuals" },
     { name = "pre-commit", specifier = ">=3.0.0" },
     { name = "pytest", specifier = ">=7.0.0" },
     { name = "pytest-asyncio", specifier = ">=1.3.0" },
+    { name = "rdbpython" },
     { name = "ruff", specifier = ">=0.8.0" },
 ]
 
@@ -458,6 +481,20 @@ wheels = [
 ]
 
 [[package]]
+name = "rdbpython"
+version = "0.2.4"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/38/31/701d75bf1898cedb9fa6310844613a4a6235b8b6356a24101eb498e4fe6b/rdbpython-0.2.4.tar.gz", hash = "sha256:1300bd77406bf7739baa67ba46cfabd22814c337cb62fe4055364209913cfe43", size = 58708, upload-time = "2026-05-09T17:06:07.955Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/45/da/e6e31f238580fbc21be0aefefd16b7b8d8f5611f1284d095e8a57c55a2e8/rdbpython-0.2.4-cp312-cp312-macosx_10_14_x86_64.whl", hash = "sha256:0b51e748a17f67e71fbf8afdb2d04a9d717dabebecdb8bf3958dc79dc2d622fe", size = 3519797, upload-time = "2026-05-09T17:05:48.287Z" },
+    { url = "https://files.pythonhosted.org/packages/c3/e9/8046dd822ad125560504d388f2c75fdebd200efcdfef6035b058ee58ecf2/rdbpython-0.2.4-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:8d37046836825192aad08babed25ce32dc79ac5d602ed764de8bad50613baf27", size = 3088401, upload-time = "2026-05-09T17:05:50.689Z" },
+    { url = "https://files.pythonhosted.org/packages/b7/b9/d50a3e506e2ba89594f48a018756cce3720e082583af4eccc7ae985cda47/rdbpython-0.2.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:282528d5872026f50b2fc6a684fad5c6c2b23e60bea3535684e791ff1157c820", size = 7103047, upload-time = "2026-05-09T17:05:52.85Z" },
+    { url = "https://files.pythonhosted.org/packages/ea/ce/988e73fad79bc138be09ae80d75162065e8d20b8c9f8873fc256d8b8c50b/rdbpython-0.2.4-cp313-cp313-macosx_10_14_x86_64.whl", hash = "sha256:df3808fb945d1626129b9fc07cd3712974ba64afedb2b191cbe51eebb86b6528", size = 3518503, upload-time = "2026-05-09T17:05:55.262Z" },
+    { url = "https://files.pythonhosted.org/packages/bf/6a/1862aec866386581b9ae50a63ac6ec52be30fb843624c2047d22cef0e831/rdbpython-0.2.4-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:5444069c574845e6f5a2b9557461d88db46426b547da68147bd1c1c2dfd1f39b", size = 3087205, upload-time = "2026-05-09T17:05:57.18Z" },
+    { url = "https://files.pythonhosted.org/packages/2d/a6/869ede27974a6ade159b9f7c86624e75c4aa2b1108edf012ddd3c08a3d92/rdbpython-0.2.4-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:06e56423896558bfd1f74a96386c5ba90ff23b92fd5d5ba9d4818ce911db8600", size = 7093985, upload-time = "2026-05-09T17:05:59.265Z" },
+]
+
+[[package]]
 name = "ruff"
 version = "0.15.1"
 source = { registry = "https://pypi.org/simple" }
@@ -585,6 +622,46 @@ sdist = { url = "https://files.pythonhosted.org/packages/aa/a3/4d310fa5f00863544
 wheels = [
     { url = "https://files.pythonhosted.org/packages/6a/2a/dc2228b2888f51192c7dc766106cd475f1b768c10caaf9727659726f7391/virtualenv-20.36.1-py3-none-any.whl", hash = "sha256:575a8d6b124ef88f6f51d56d656132389f961062a9177016a50e4f507bbcc19f", size = 6008258, upload-time = "2026-01-09T18:20:59.425Z" },
 ]
+
+[[package]]
+name = "virtuals-binary-codec"
+version = "0.1.0"
+source = { editable = "../../virtuals/lib/binary-codec" }
+
+[package.metadata]
+requires-dist = [
+    { name = "cython", marker = "extra == 'dev'", specifier = ">=3.0.0" },
+    { name = "pytest", marker = "extra == 'test'", specifier = ">=7.0.0" },
+    { name = "setuptools", marker = "extra == 'dev'", specifier = ">=68.0" },
+]
+provides-extras = ["dev", "test"]
+
+[[package]]
+name = "virtuals-py"
+version = "0.1.0"
+source = { editable = "../../virtuals" }
+dependencies = [
+    { name = "attrs" },
+    { name = "virtuals-binary-codec" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "attrs" },
+    { name = "hypothesis", marker = "extra == 'test'", specifier = ">=6.0.0" },
+    { name = "lmdb", marker = "extra == 'lmdb'" },
+    { name = "pre-commit", marker = "extra == 'dev'", specifier = ">=3.0.0" },
+    { name = "pytest", marker = "extra == 'test'", specifier = ">=7.0.0" },
+    { name = "pytest-benchmark", marker = "extra == 'test'", specifier = ">=4.0.0" },
+    { name = "pytest-cov", marker = "extra == 'test'", specifier = ">=4.0.0" },
+    { name = "pytest-timeout", marker = "extra == 'test'", specifier = ">=2.1.0" },
+    { name = "pytest-xdist", marker = "extra == 'test'", specifier = ">=3.0.0" },
+    { name = "rdbpython", marker = "extra == 'rocksdb'" },
+    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.1.0" },
+    { name = "virtuals-binary-codec", editable = "../../virtuals/lib/binary-codec" },
+    { name = "virtuals-py", extras = ["dev", "test"], marker = "extra == 'all'" },
+]
+provides-extras = ["rocksdb", "lmdb", "dev", "test", "all"]
 
 [[package]]
 name = "watchfiles"
