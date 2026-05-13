@@ -1,8 +1,10 @@
 .PHONY: build dev dev-web install install-web install-api lint test typecheck example
 
-# Build the browser bundle into web/dist (consumed by nudle.serve as static_dir).
+# Build the browser bundle, then a python wheel that bakes web/dist into
+# nudle/_static. Consumers get one artifact: `pip install nudle-*.whl`.
 build:
 	cd web && npm run build
+	cd api && uv build --wheel
 
 # Run the counter end-to-end example. Needs `make build` first.
 example:
