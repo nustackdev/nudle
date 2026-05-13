@@ -8,7 +8,7 @@ dev-web:
 	cd web && npm run dev
 
 dev-api:
-	cd api && uv run uvicorn everylens.server:app --reload --port 8000
+	cd api && uv run uvicorn nudle.server:app --reload --port 8000
 
 # Install
 install: install-web install-api
